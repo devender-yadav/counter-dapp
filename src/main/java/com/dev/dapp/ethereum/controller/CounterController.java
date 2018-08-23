@@ -13,17 +13,35 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dev.dapp.ethereum.service.Web3jService;
 import com.dev.dapp.ethereum.util.CommonUtil;
 
+/**
+ * The Class CounterController.
+ */
 @Controller
 public class CounterController {
 
+	/** The web3j service. */
 	@Autowired
 	private Web3jService web3jService;
 
+	/**
+	 * Home.
+	 *
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping("/")
 	ModelAndView home() throws Exception {
 		return new ModelAndView("login");
 	}
 
+	/**
+	 * Version.
+	 *
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping("/version")
 	ModelAndView version() throws Exception {
 		ModelAndView model = new ModelAndView("success");
@@ -31,16 +49,41 @@ public class CounterController {
 		return model;
 	}
 
+	/**
+	 * Deploy counter form.
+	 *
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping(value = "/deploycounter", method = RequestMethod.GET)
 	public ModelAndView deployCounterForm() throws Exception {
 		return new ModelAndView("deploy");
 	}
 
+	/**
+	 * Search contract.
+	 *
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping(value = "/searchcounter", method = RequestMethod.GET)
 	public ModelAndView searchContract() throws Exception {
 		return new ModelAndView("search");
 	}
 
+	/**
+	 * Deploy counter.
+	 *
+	 * @param password
+	 *            the password
+	 * @param walletFile
+	 *            the wallet file
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping(value = "/deploycounter.do", method = RequestMethod.POST)
 	public ModelAndView deployCounter(@RequestParam("password") String password,
 			@RequestParam(value = "wallet", required = true) MultipartFile walletFile) throws Exception {
@@ -59,6 +102,19 @@ public class CounterController {
 		return model;
 	}
 
+	/**
+	 * Search counter.
+	 *
+	 * @param password
+	 *            the password
+	 * @param walletFile
+	 *            the wallet file
+	 * @param contractAddress
+	 *            the contract address
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping(value = "/searchcounter.do", method = RequestMethod.POST)
 	public ModelAndView searchCounter(@RequestParam("password") String password,
 			@RequestParam(value = "wallet", required = true) MultipartFile walletFile,
@@ -77,6 +133,13 @@ public class CounterController {
 		return model;
 	}
 
+	/**
+	 * Gets the counter.
+	 *
+	 * @return the counter
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping(value = "/getcounter", method = RequestMethod.GET)
 	public ModelAndView getCounter() throws Exception {
 		ModelAndView model = new ModelAndView("home");
@@ -85,6 +148,13 @@ public class CounterController {
 		return model;
 	}
 
+	/**
+	 * Inc counter.
+	 *
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping(value = "/inccounter", method = RequestMethod.GET)
 	public ModelAndView incCounter() throws Exception {
 		String txHash = web3jService.increaseCounterValue();
@@ -95,6 +165,13 @@ public class CounterController {
 		return model;
 	}
 
+	/**
+	 * Dec counter.
+	 *
+	 * @return the modelAndView
+	 * @throws Exception
+	 *             the exception
+	 */
 	@RequestMapping(value = "/deccounter", method = RequestMethod.GET)
 	public ModelAndView decCounter() throws Exception {
 		String txHash = web3jService.decreaseCounterValue();

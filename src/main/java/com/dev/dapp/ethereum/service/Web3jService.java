@@ -15,6 +15,7 @@ import org.web3j.tx.Contract;
 import org.web3j.tx.ManagedTransaction;
 import org.web3j.utils.Numeric;
 
+import com.dev.dapp.ethereum.exception.DAppException;
 import com.dev.dapp.ethereum.smartcontractwrappers.Counter;
 
 /**
@@ -94,7 +95,7 @@ public class Web3jService {
 		System.out.println("GAS used : " + receipt.getGasUsed());
 		System.out.println("Tx hash : " + receipt.getTransactionHash());
 		if (!isStatusOk(receipt)) {
-			throw new Exception("Something went wrong!");
+			throw new DAppException("Something went wrong while executing ethereum transaction!");
 		}
 		return receipt.getTransactionHash();
 	}
@@ -111,7 +112,7 @@ public class Web3jService {
 		System.out.println("GAS used : " + receipt.getGasUsed());
 		System.out.println("Tx hash : " + receipt.getTransactionHash());
 		if (!isStatusOk(receipt)) {
-			throw new Exception("Something went wrong!");
+			throw new DAppException("Something went wrong while executing ethereum transaction!");
 		}
 		return receipt.getTransactionHash();
 	}

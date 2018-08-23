@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 import org.web3j.crypto.CipherException;
 
+import com.dev.dapp.ethereum.exception.DAppException;
+
 @ControllerAdvice
 public class ExceptionController {
 
@@ -23,6 +25,13 @@ public class ExceptionController {
 	public ModelAndView handleWalletFileError(HttpServletRequest request, Exception e) {
 		ModelAndView modelAndView = new ModelAndView("failure");
 		modelAndView.addObject("message", "Ethereum credentials are wrong. Please check ethereum wallet file!");
+		return modelAndView;
+	}
+
+	@ExceptionHandler(DAppException.class)
+	public ModelAndView handleTransactionError(HttpServletRequest request, Exception e) {
+		ModelAndView modelAndView = new ModelAndView("failure");
+		modelAndView.addObject("message", e.getMessage());
 		return modelAndView;
 	}
 
