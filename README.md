@@ -1,10 +1,10 @@
 # Counter DApp
 
-It's a simple counter decentralized application. Anyone can read it's counter value and only contract publisher can increase/decease it. 
+It's a simple counter decentralized application. Anyone can read it's counter value and only contract publisher can increase/decrease it. 
 
 ## How to use
 
-Create executable file
+**Clone project and create executable war file**
 
     git clone https://github.com/devender-yadav/counter-dapp.git
     
@@ -12,9 +12,9 @@ Create executable file
     
     mvn clean install
     
-`counterdapp-1.0-SNAPSHOT.war` will be created in target folder.
+`counterdapp-1.0-SNAPSHOT.war` will be created in the target folder.
 
-Start Dapp
+**Start Dapp**
     
     java -jar target/counterdapp-1.0-SNAPSHOT.war
     
@@ -24,7 +24,10 @@ Start Dapp
  
 ## Ethereum endpoint configuration
 
-Edit `web3j.client-address` in  [application.properites](https://github.com/devender-yadav/counter-dapp/blob/master/src/main/resources/application.properties). 
+Edit `web3j.client-address` property in [application.properites](https://github.com/devender-yadav/counter-dapp/blob/master/src/main/resources/application.properties) as per your ethereum client.
 
 
-_P.S. This is just a demo DApp. Feel free to edit it. _
+-----------
+
+
+_P.S. This is just an experimental demo DApp. Feel free to edit it :smile:._
