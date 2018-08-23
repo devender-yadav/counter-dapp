@@ -30,4 +30,4 @@ Edit `web3j.client-address` property in [application.properites](https://github.
 -----------
 
 
-_P.S. This is just an experimental demo DApp. Feel free to edit it :smile:_
+_P.S. This is just an experimental demo DApp. Feel free to edit it_ :smile:
