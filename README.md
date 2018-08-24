@@ -4,7 +4,7 @@ It's a simple counter decentralized application. Anyone can read it's counter va
 
 ## How to use
 
-**Clone project and create executable war file**
+### Clone project and create executable war file
 
     git clone https://github.com/devender-yadav/counter-dapp.git
     
@@ -14,12 +14,24 @@ It's a simple counter decentralized application. Anyone can read it's counter va
     
 `counterdapp-1.0-SNAPSHOT.war` will be created in the target folder.
 
-**Start Dapp**
+### Start Dapp
     
     java -jar target/counterdapp-1.0-SNAPSHOT.war
     
   
  The application will run on **localhost:8080**
+ 
+
+### Create Ethereum wallet
+
+1. You can use https://www.myetherwallet.com/
+2. You can use web3j itself
+
+       ./web3j wallet create
+       
+**How to get test ether**
+
+For ropsten testnet - http://faucet.ropsten.be:3001/
  
  
 ## Ethereum endpoint configuration
