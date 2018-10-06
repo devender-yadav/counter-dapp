@@ -1,10 +1,10 @@
 # Counter DApp
 
-It's a simple counter decentralized application. Anyone can read it's counter value and only contract publisher can increase/decrease it. Check [wiki](https://github.com/devender-yadav/counter-dapp/wiki) to know about various tools used. 
+It's a simple counter decentralized application. Anyone can read it's counter value and only contract publisher can increase/decrease it. Check [wiki](https://github.com/devender-yadav/counter-dapp/wiki) to know about the various tools used. 
 
 ## How to use
 
-### Clone project and create executable war file
+### Clone project and create the executable war file
 
     git clone https://github.com/devender-yadav/counter-dapp.git
     
@@ -36,7 +36,7 @@ For ropsten testnet - http://faucet.ropsten.be:3001/
  
 ## Ethereum endpoint configuration
 
-Edit `web3j.client-address` property in [application.properites](https://github.com/devender-yadav/counter-dapp/blob/master/src/main/resources/application.properties) as per your ethereum client.
+Edit `web3j.client-address` property in [application.properties](https://github.com/devender-yadav/counter-dapp/blob/master/src/main/resources/application.properties) as per your ethereum client.
 
 
 -----------
